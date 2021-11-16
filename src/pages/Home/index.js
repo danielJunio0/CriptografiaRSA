@@ -47,7 +47,8 @@ export function Home() {
         var msgEncript = [];
 
         mensagem.split('').forEach(letra => {
-            var value = (letra.charCodeAt() ** e) % n;
+            var x = new BigNumber(letra.charCodeAt(0));
+            var value = (x.pow(e).mod(n));
             msgEncript.push(value);
         });
 
@@ -127,7 +128,7 @@ export function Home() {
                             style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}
                         />
                         <Typography style={{ padding: '10px' }}>
-                            Mensagem Descriptografada: {mensagemDescriptografada}
+                            Mensagem Descriptografada: {msgResultado && mensagemDescriptografada ? mensagemDescriptografada.join("") : ''}
                         </Typography>
                     </div>
                     <Typography
