@@ -33,7 +33,6 @@ export function Home() {
             alert('Todos campos devem ser devidamente preenchidos!')
         else {
             var eLocal = e;
-
             while ((eLocal * d) % z != 1) {
                 eLocal++;
             }
@@ -126,9 +125,30 @@ export function Home() {
                             value={msgResultado}
                             style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}
                         />
-                        <Typography style={{ padding: '10px' }}>
-                            Mensagem Descriptografada: {msgResultado && mensagemDescriptografada ? mensagemDescriptografada.join("") : ''}
-                        </Typography>
+                        {msgResultado && mensagemDescriptografada &&
+                            <div>
+                                <Typography style={{
+                                    padding: '10px',
+                                    justifyContent: 'center',
+                                    display: 'flex',
+                                    alignContent: 'center'
+                                }}>
+                                    Mensagem Descriptografada
+                                </Typography>
+                                <Typography
+                                    variant="h5"
+                                    align="center"
+                                    style={{
+                                        padding: '10px',
+                                        color: '#8e05c2',
+                                        fontWeight: 'bold',
+                                        justifyContent: 'center',
+                                        display: 'flex'
+                                    }}>
+                                    {msgResultado && mensagemDescriptografada ? mensagemDescriptografada.join("") : ''}
+                                </Typography >
+                            </div>
+                        }
                     </div>
                     <Typography
                         variant="h7"
