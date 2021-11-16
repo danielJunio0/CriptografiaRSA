@@ -38,20 +38,19 @@ export function Home() {
                 eLocal++;
             }
             setE(eLocal);
-            CriptografarMensagem();
+            CriptografarMensagem(eLocal);
         }
     }
 
-    function CriptografarMensagem() {
+    function CriptografarMensagem(eLocal) {
 
         var msgEncript = [];
 
         mensagem.split('').forEach(letra => {
             var x = new BigNumber(letra.charCodeAt(0));
-            var value = (x.pow(e).mod(n));
+            var value = x.pow(eLocal).mod(n);
             msgEncript.push(value);
         });
-
         setMsgResultado(msgEncript);
         setMensagemCriptografada(msgEncript);
     }
