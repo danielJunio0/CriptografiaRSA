@@ -123,6 +123,7 @@ export function Home() {
                             label="Resultado"
                             type="text"
                             value={msgResultado}
+                            
                             style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}
                         />
                         {msgResultado && mensagemDescriptografada &&
